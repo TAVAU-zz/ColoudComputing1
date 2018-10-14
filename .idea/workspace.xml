@@ -234,17 +234,6 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="courseservice5" type="cbb8eebc:String" user="courseservice5" />
             </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="courseservice5" type="cbb8eebc:String" user="courseservice5" />
-              <item name="src/main/java" type="cbb8eebc:String" user="src/main/java" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="courseservice5" type="cbb8eebc:String" user="courseservice5" />
-              <item name="src/main/java" type="cbb8eebc:String" user="src/main/java" />
-              <item name="org/yhwang/csye6225/courseservice5/datamodel" type="cbb8eebc:String" user="org/yhwang/csye6225/courseservice5/datamodel" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -489,12 +478,12 @@
       <workItem from="1539398164280" duration="1789000" />
       <workItem from="1539402674179" duration="86000" />
       <workItem from="1539402779056" duration="591000" />
-      <workItem from="1539403485783" duration="4168000" />
+      <workItem from="1539403485783" duration="4398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23609000" />
+    <option name="totallyTimeSpent" value="23839000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
