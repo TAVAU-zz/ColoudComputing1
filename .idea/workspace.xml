@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="courseservice5:war exploded" />
+      <artifact name="courseservice5:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8089e0b7-20a6-4c5d-91bb-b93b3aa3cb63" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/aaa" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBTester.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBTester.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/courseservice5/WEB-INF/classes/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBTester.class" afterPath="$PROJECT_DIR$/target/courseservice5/WEB-INF/classes/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBTester.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,8 +38,8 @@
       <file leaf-file-name="DynamoDBTester.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7">
-              <caret line="27" column="37" lean-forward="false" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+            <state relative-caret-position="19">
+              <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -484,12 +485,12 @@
       <workItem from="1539398164280" duration="1789000" />
       <workItem from="1539402674179" duration="86000" />
       <workItem from="1539402779056" duration="591000" />
-      <workItem from="1539403485783" duration="4536000" />
+      <workItem from="1539403485783" duration="5897000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23977000" />
+    <option name="totallyTimeSpent" value="25338000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1074,21 +1075,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="27" column="37" lean-forward="false" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aaa">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
