@@ -9,10 +9,9 @@ import java.util.Date;
 public class ProfessorsService {
     static HashMap<Long, Professor> prof_Map = InMemoryDatabase.getProfessorDB();
 
-    //getting a list of al profe
+    //getting a list of al professor
     //GET "..webapo/professors"
     public List<Professor> getAllProfessors() {
-
         return new ArrayList<>(prof_Map.values());
     }
 
@@ -60,7 +59,7 @@ public class ProfessorsService {
     public List<Professor> getProfessorsByDepartment(String department) {
         List<Professor> list = new ArrayList<>();
         for (Map.Entry<Long, Professor> entry: prof_Map.entrySet()) {
-            if (entry.getValue().getDepartment() == department) {
+            if (entry.getValue().getDepartment().equals(department)) {
                 list.add(entry.getValue());
             }
         }

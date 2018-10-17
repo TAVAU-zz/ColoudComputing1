@@ -22,17 +22,17 @@ public class ProfessorsResource {
     }
 
     //query by department
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    //@Produces(MediaType.APPLICATION_XML)
-//    public List<Professor> getProfessorsByDepartment(@QueryParam ("department") String department
-//                                                      ) {
-//        if (department == null) {
-//            return profService.getAllProfessors();
-//        } else {
-//            return profService.getProfessorsByDepartment(department);
-//        }
-//    }
+    @GET
+    @Path("/professorsByDepartment")
+    @Produces(MediaType.APPLICATION_JSON)
+    //@Produces(MediaType.APPLICATION_XML)
+    public List<Professor> getProfessorsByDepartment(@QueryParam("department") String department) {
+        if (department.equals("null")) {
+            return profService.getAllProfessors();
+        } else {
+            return profService.getProfessorsByDepartment(department);
+        }
+    }
 
     //...webapi/professors/1
     @GET
