@@ -1,5 +1,6 @@
 package org.yhwang.csye6225.courseservice5.service;
 
+import org.yhwang.csye6225.courseservice5.datamodel.Course;
 import org.yhwang.csye6225.courseservice5.datamodel.InMemoryDatabase;
 import org.yhwang.csye6225.courseservice5.datamodel.Professor;
 
@@ -7,10 +8,12 @@ import java.util.*;
 import java.util.Date;
 
 public class ProfessorsService {
-    static HashMap<Long, Professor> prof_Map = InMemoryDatabase.getProfessorDB();
+    InMemoryDatabase db = InMemoryDatabase.getInstance();
+    //HashMap<String, Course> course_Map = db.getCourseDB();
+    HashMap<Long, Professor> prof_Map = db.getProfessorDB();
 
     //getting a list of al professor
-    //GET "..webapo/professors"
+    //GET "..webapi/professors"
     public List<Professor> getAllProfessors() {
         return new ArrayList<>(prof_Map.values());
     }

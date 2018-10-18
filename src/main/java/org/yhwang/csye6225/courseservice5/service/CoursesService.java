@@ -1,14 +1,17 @@
 package org.yhwang.csye6225.courseservice5.service;
 
-import org.yhwang.csye6225.courseservice5.datamodel.Course;
-import org.yhwang.csye6225.courseservice5.datamodel.InMemoryDatabase;
-import org.yhwang.csye6225.courseservice5.datamodel.Professor;
-import org.yhwang.csye6225.courseservice5.datamodel.Student;
+import org.yhwang.csye6225.courseservice5.datamodel.*;
 
 import java.util.*;
 
 public class CoursesService {
-    static HashMap<String, Course> course_Map = InMemoryDatabase.getCourseDB();
+    //public static ProgramService programService = ProgramService.getInstance();
+    InMemoryDatabase db = InMemoryDatabase.getInstance();
+    HashMap<String, Course> course_Map = db.getCourseDB();
+
+    public CoursesService() {
+
+    }
 
     //getting a list of courses
     //GET "..webapi/courses"
@@ -16,19 +19,11 @@ public class CoursesService {
         return new ArrayList<>(course_Map.values());
     }
 
-    //adding a course
-    public Course addCourse(String courseId) {
-        //create a course obj
-        Course course = new Course(courseId);
-        course_Map.put(courseId, course);
-        return course_Map.get(courseId);
+    //add course by id
+    public Course addCourse(Course course){
+        return course_Map.put(course.getCourseId(),course);
     }
 
-    public Course addCourse(String courseId, Professor pro) {
-        Course course = new Course(courseId);
-        course.setAssociatedProfessor(pro);
-        return course_Map.put(courseId, course);
-    }
 
     //getting one course
     public Course getCourse(String courseId) {

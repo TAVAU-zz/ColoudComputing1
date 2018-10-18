@@ -12,14 +12,20 @@ public class Student {
     private String name;
     private long studentId;
     private Image image;
-    private List<String> courses;
+    private List<Course> courses;
     private String programName;
 
     public Student() {
 
     }
 
-    public Student(String name, long studentId, List<String> courses, String programName) {
+    public Student(String name, long studentId, String programName) {
+        this.name = name;
+        this.studentId = studentId;
+        this.programName = programName;
+    }
+
+    public Student(String name, long studentId, List<Course> courses, String programName) {
         this.name = name;
         this.studentId = studentId;
         this.image = null;
@@ -55,11 +61,11 @@ public class Student {
         return programName;
     }
 
-    public List<String> getCourses() {
+    public List<Course> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<String> courses) {
+    public void setCourses(List<Course> courses) {
         this.courses = courses;
     }
 

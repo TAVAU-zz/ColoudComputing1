@@ -9,7 +9,8 @@ import org.yhwang.csye6225.courseservice5.datamodel.Student;
 import java.util.*;
 
 public class StudentsService {
-    static HashMap<Long, Student> stu_Map = InMemoryDatabase.getStudentDB();
+    InMemoryDatabase db = InMemoryDatabase.getInstance();
+    HashMap<Long, Student> stu_Map = db.getStudentDB();
 
     //getting a list of all students
     //GET "..webapi/students"
@@ -18,23 +19,11 @@ public class StudentsService {
     }
 
     //adding a student
-    public void addStudent(String name, List<String> courses, String program) {
+    public Student addStudent(Student student) {
         //Next id
         //not thread safe :multi call
         long nextAvailableId = stu_Map.size() + 1;
-
-        //create a prof obj
-        Student stu = new Student(name, nextAvailableId, courses, program);
-        stu_Map.put(nextAvailableId, stu);
-    }
-
-
-    public Student addStudent(Student stu) {
-        long nextAvailableId = stu_Map.size() + 1;
-
-        stu_Map.put(nextAvailableId, stu);
-        return stu_Map.get(nextAvailableId);
-
+        return stu_Map.put(nextAvailableId, student);
     }
 
     //getting one student

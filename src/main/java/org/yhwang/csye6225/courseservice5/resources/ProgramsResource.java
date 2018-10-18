@@ -16,11 +16,6 @@ public class ProgramsResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Program> getPrograms() {
-        List<Course> list = new ArrayList<>();
-        list.add(new Course("cloud"));
-        list.add(new Course("algorithm"));
-        addProgram("CS", list);
-        addProgram("IS", list);
         return programService.getAllPrograms();
     }
 
@@ -39,14 +34,21 @@ public class ProgramsResource {
 
     //...webapi/programs/1
     @GET
-    @Path("/{programName}")
+    @Path("/{programId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Program getProgram(@PathParam("programName")String programName) {
-        return programService.getProgram(programName);
+    public Program getProgram(@PathParam("programId") long programId) {
+        return programService.getProgramById(programId);
+    }
+
+    @GET
+    @Path("/{programId}/courses")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Course> getCourses(@PathParam("programId") long programId) {
+        return programService.getCourses(programId);
     }
 
    // @POST
-    // @Path()
+    //@Path()
    // @Produces(MediaType.APPLICATION_JSON)
    // @Consumes(MediaType.APPLICATION_JSON)
 //    public Program addProgram(String name) {
@@ -56,23 +58,23 @@ public class ProgramsResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public void addProgram(Program program) {
-        programService.addProgram(program);
+    public Program addProgram(Program program) {
+        return programService.addProgram(program);
     }
 
     //replace
     @PUT
-    @Path("/{programName}")
+    @Path("/{programId}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Program updateProgram(@PathParam("programName")String name, Program program) {
-        return programService.updateProgramInformation(name, program);
+    public Program updateProgram(@PathParam("programId")long programId, Program program) {
+        return programService.updateProgramInformation(programId, program);
     }
 
     @DELETE
-    @Path("/{programName}")
+    @Path("/{programId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Program deleteStudent(@PathParam("programName")String programName) {
-        return programService.deleteProgram(programName);
+    public Program deleteStudent(@PathParam("programId")long programId) {
+        return programService.deleteProgram(programId);
     }
 }

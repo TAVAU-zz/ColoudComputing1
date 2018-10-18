@@ -15,8 +15,6 @@ public class StudentsResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Student> getStudents() {
-        addStudent("Ciera", Arrays.asList("csye6225","algorithm6250"), "IS");
-        addStudent("Ann", Arrays.asList("csye6225","algorithm6250"), "IS");
         return studentsService.getAllStudents();
     }
 
@@ -48,10 +46,6 @@ public class StudentsResource {
     public Student addStudent(Student stu) {
 
         return studentsService.addStudent(stu);
-    }
-
-    public void addStudent(String name, List<String> courses, String program) {
-        studentsService.addStudent(name, courses, program);
     }
 
     @PUT

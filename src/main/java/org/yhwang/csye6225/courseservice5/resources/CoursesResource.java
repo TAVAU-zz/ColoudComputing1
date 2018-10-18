@@ -17,8 +17,6 @@ public class CoursesResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Course> getCourses() {
-        addCourse("Big Data", new Professor("EE", 30, new Date(), "John"));
-        addCourse("Could", new Professor("ME", 29, new Date(), "Smith"));
         return coursesService.getAllCourses();
     }
 
@@ -34,7 +32,7 @@ public class CoursesResource {
         }
     }
 
-    //...webapi/courses/1
+    //...webapi/courses/
     @GET
     @Path("/{courseId}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -47,13 +45,10 @@ public class CoursesResource {
     // @Path()
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Course addCourse(String courseId) {
-        return coursesService.addCourse(courseId);
+    public Course addCourse(Course course) {
+        return coursesService.addCourse(course);
     }
 
-    public void addCourse(String courseId, Professor prof) {
-        coursesService.addCourse(courseId, prof);
-    }
 
     @PUT
     @Path("/{courseId}")

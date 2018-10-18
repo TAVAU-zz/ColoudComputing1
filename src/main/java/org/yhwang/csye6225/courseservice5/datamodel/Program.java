@@ -5,28 +5,38 @@ import java.util.List;
 
 @XmlRootElement//map a class to xml
 public class Program {
-    private String name;
-
+    private long programId;
+    private String programName;
     private List<Course> courses;
 
     public Program() {
     }
 
-    public Program(String name) {
-        this.name = name;
+    public Program(long programId, String programName) {
+        this.programId = programId;
+        this.programName = programName;
     }
 
-    public Program(String name, List<Course> courses) {
-        this.name = name;
+    public Program(long programId, String programName, List<Course> courses) {
+        this.programId = programId;
+        this.programName = programName;
         this.courses = courses;
     }
 
-    public String getName() {
-        return name;
+    public long getProgramId() {
+        return programId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProgramId(long programId) {
+        this.programId = programId;
+    }
+
+    public String getProgramName() {
+        return programName;
+    }
+
+    public void setProgramName(String programName) {
+        this.programName = programName;
     }
 
     public List<Course> getCourses() {

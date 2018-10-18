@@ -14,10 +14,7 @@ public class ProfessorsResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    //@Produces(MediaType.APPLICATION_XML)
     public List<Professor> getProfessors() {
-        addProfessor("Tom", "IS", new Date());
-        addProfessor("Yusuf", "IS", new Date());
         return profService.getAllProfessors();
     }
 
@@ -43,19 +40,15 @@ public class ProfessorsResource {
         return profService.getProfessor(profId);
 
     }
+
     @POST
    // @Path()
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    //@Produces(MediaType.APPLICATION_XML)
-    //@Consumes(MediaType.APPLICATION_XML)
     public Professor addProfessor(Professor prof) {
         return profService.addProfessor(prof);
     }
 
-    public void addProfessor(String name, String department, Date joiningDate) {
-        profService.addProfessor(name, department,joiningDate);
-    }
 
     @PUT
     @Path("/{professorId}")

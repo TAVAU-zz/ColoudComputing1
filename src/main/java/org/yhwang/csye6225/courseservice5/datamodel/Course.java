@@ -3,7 +3,8 @@ import java.util.*;
 
 public class Course {
     private String courseId;
-    private Lecture lectures;
+    private String courseName;
+    private List<Lecture> lectures;
     private String board;
     private String roster;
     private List<Student> enrolledStudent;
@@ -12,8 +13,9 @@ public class Course {
 
     public Course(){}
 
-    public Course(String courseId) {
+    public Course(String courseId, String courseName) {
         this.courseId = courseId;
+        this.courseName = courseName;
         this.lectures = null;
         this.board = null;
         this.roster = null;
@@ -30,11 +32,19 @@ public class Course {
         this.courseId = courseId;
     }
 
-    public Lecture getLectures() {
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public List<Lecture> getLectures() {
         return lectures;
     }
 
-    public void setLectures(Lecture lectures) {
+    public void setLectures(List<Lecture> lectures) {
         this.lectures = lectures;
     }
 
