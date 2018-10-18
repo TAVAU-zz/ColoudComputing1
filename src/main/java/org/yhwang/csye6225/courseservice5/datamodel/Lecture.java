@@ -6,6 +6,10 @@ public class Lecture {
     private String notes;
     private String courseMaterial;
 
+    public Lecture() {
+
+    }
+
     public Lecture(long lectureId, String lectureName) {
         this.lectureId = lectureId;
         this.lectureName = lectureName;

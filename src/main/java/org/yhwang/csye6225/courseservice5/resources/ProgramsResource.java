@@ -59,7 +59,8 @@ public class ProgramsResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Program addProgram(Program program) {
-        return programService.addProgram(program);
+        programService.addProgram(program);
+        return program;
     }
 
     //replace

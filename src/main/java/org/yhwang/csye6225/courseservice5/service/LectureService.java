@@ -22,7 +22,8 @@ public class LectureService {
     }
 
     public Lecture addLecture(Lecture lecture) {
-        return lec_Map.put(lecture.getLectureId(),lecture);
+        lec_Map.put(lecture.getLectureId(),lecture);
+        return lecture;
     }
 
     //updating lecture info

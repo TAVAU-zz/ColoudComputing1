@@ -21,7 +21,8 @@ public class CoursesService {
 
     //add course by id
     public Course addCourse(Course course){
-        return course_Map.put(course.getCourseId(),course);
+        course_Map.put(course.getCourseId(),course);
+        return course;
     }
 
 

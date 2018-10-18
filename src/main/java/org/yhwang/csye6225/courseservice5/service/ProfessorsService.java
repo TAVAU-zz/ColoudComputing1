@@ -31,10 +31,9 @@ public class ProfessorsService {
 
 
     public Professor addProfessor(Professor prof) {
-        long nextAvailableId = prof_Map.size() + 1;
-
-        prof_Map.put(nextAvailableId, prof);
-        return prof_Map.get(nextAvailableId);
+        long profId = prof.getProfessorId();
+        prof_Map.put(profId, prof);
+        return prof;
     }
 
     //getting one professor

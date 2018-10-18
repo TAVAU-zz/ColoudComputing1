@@ -22,14 +22,15 @@ public class StudentsService {
     public Student addStudent(Student student) {
         //Next id
         //not thread safe :multi call
-        long nextAvailableId = stu_Map.size() + 1;
-        return stu_Map.put(nextAvailableId, student);
+        long studentId = student.getStudentId();
+        return stu_Map.put(studentId, student);
     }
 
     //getting one student
     public Student getStudent(Long stuId) {
         return stu_Map.get(stuId);
     }
+
     //deleting a student
     public Student deleteStudent(Long stuId) {
         Student deletedStuDetails = stu_Map.get(stuId);

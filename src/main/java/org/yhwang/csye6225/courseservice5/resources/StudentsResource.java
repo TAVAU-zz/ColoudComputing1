@@ -44,8 +44,8 @@ public class StudentsResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Student addStudent(Student stu) {
-
-        return studentsService.addStudent(stu);
+        studentsService.addStudent(stu);
+        return stu;
     }
 
     @PUT
