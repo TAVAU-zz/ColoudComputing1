@@ -26,7 +26,7 @@ public class DynamoDBTester {
         credentialsProvider.getCredentials();
 
         dynamoDB = AmazonDynamoDBClientBuilder.standard().withCredentials(credentialsProvider)
-                .withRegion("us-west-1").build();
+                .withRegion("us-east-2").build();
 
 
     }
@@ -37,8 +37,8 @@ public class DynamoDBTester {
 
         GetItemRequest getItemRequest = new GetItemRequest();
         ///Users/mana/.aws/credentials
-        //aws_access_key_id=AKIAIJUH6DEFKMLJ27BA
-        //aws_secret_access_key=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
+        //aws_access_key_id=
+        //aws_secret_access_key=
         //key that you looking for dtudentId whith value 123
         Map<String, AttributeValue> itemToFetch = new HashMap<>();
         itemToFetch.put("studentId", new AttributeValue().withS("123"));
