@@ -1,15 +1,23 @@
 package org.yhwang.csye6225.courseservice5.datamodel;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBIgnore;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.*;
 
+@XmlRootElement
+@DynamoDBTable(tableName ="course")
 public class Course {
     private String courseId;
     private String courseName;
     private List<Lecture> lectures;
     private String board;
     private String roster;
-    private List<Student> enrolledStudent;
-    private Student TA;
-    private Professor associatedProfessor;
+    private List<String> enrolledStudent;
+    private String TA;
+    private String associatedProfessor;
 
     public Course(){}
 
@@ -24,6 +32,7 @@ public class Course {
         this.associatedProfessor = null;
     }
 
+    @DynamoDBHashKey(attributeName = "courseId")
     public String getCourseId() {
         return courseId;
     }
@@ -32,6 +41,7 @@ public class Course {
         this.courseId = courseId;
     }
 
+    @DynamoDBAttribute(attributeName = "courseName")
     public String getCourseName() {
         return courseName;
     }
@@ -40,6 +50,7 @@ public class Course {
         this.courseName = courseName;
     }
 
+    @DynamoDBAttribute(attributeName = "lectures")
     public List<Lecture> getLectures() {
         return lectures;
     }
@@ -48,6 +59,7 @@ public class Course {
         this.lectures = lectures;
     }
 
+    @DynamoDBAttribute(attributeName = "board")
     public String getBoard() {
         return board;
     }
@@ -56,6 +68,7 @@ public class Course {
         this.board = board;
     }
 
+    @DynamoDBIgnore
     public String getRoster() {
         return roster;
     }
@@ -64,27 +77,30 @@ public class Course {
         this.roster = roster;
     }
 
-    public List<Student> getEnrolledStudent() {
+    @DynamoDBAttribute(attributeName = "enrolledStudent")
+    public List<String> getEnrolledStudent() {
         return enrolledStudent;
     }
 
-    public void setEnrolledStudent(List<Student> enrolledStudent) {
+    public void setEnrolledStudent(List<String> enrolledStudent) {
         this.enrolledStudent = enrolledStudent;
     }
 
-    public Student getTA() {
+    @DynamoDBAttribute(attributeName = "TA")
+    public String getTA() {
         return TA;
     }
 
-    public void setTA(Student TA) {
+    public void setTA(String TA) {
         this.TA = TA;
     }
 
-    public Professor getAssociatedProfessor() {
+    @DynamoDBAttribute(attributeName = "associatedProfessor")
+    public String getAssociatedProfessor() {
         return associatedProfessor;
     }
 
-    public void setAssociatedProfessor(Professor associatedProfessor) {
+    public void setAssociatedProfessor(String associatedProfessor) {
         this.associatedProfessor = associatedProfessor;
     }
 }

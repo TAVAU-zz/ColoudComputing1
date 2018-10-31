@@ -19,7 +19,7 @@ public class LecturesResource {
     @GET
     @Path("/{lectureId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Lecture getLectureById(@PathParam("lectureId") long lectureId){
+    public Lecture getLectureById(@PathParam("lectureId") String lectureId){
         return lectureService.getLectureById(lectureId);
     }
 
@@ -35,7 +35,7 @@ public class LecturesResource {
     @Path("/{lectureId}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Lecture updateLectureById(@PathParam("lectureId") long lectureId,Lecture lecture){
+    public Lecture updateLectureById(@PathParam("lectureId") String lectureId,Lecture lecture){
         lecture.setLectureId(lectureId);
         return lectureService.updateLectureInformation(lectureId, lecture);
     }
@@ -43,7 +43,9 @@ public class LecturesResource {
     @DELETE
     @Path("/{lectureId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Lecture removeLecture(@PathParam("lectureId") long lectureId){
+    public Lecture removeLecture(@PathParam("lectureId") String lectureId){
         return lectureService.deleteLecture(lectureId);
     }
+
+
 }

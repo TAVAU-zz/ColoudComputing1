@@ -8,6 +8,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.GetItemRequest;
 import com.amazonaws.services.dynamodbv2.model.GetItemResult;
+import com.amazonaws.services.dynamodbv2.document.Table;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +25,7 @@ public class DynamoDBTester {
     public static void init() throws Exception {
         ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
         credentialsProvider.getCredentials();
-
+        System.out.println(credentialsProvider);
         dynamoDB = AmazonDynamoDBClientBuilder.standard().withCredentials(credentialsProvider)
                 .withRegion("us-east-2").build();
 
@@ -46,6 +47,7 @@ public class DynamoDBTester {
         getItemRequest.setKey(itemToFetch);
         getItemRequest.setTableName("students-test");
         GetItemResult getItemResult = dynamoDB.getItem(getItemRequest);
+       // Table table = dynamoDB.get;
         System.out.println("GetItemResult: " + getItemResult);
     }
 }

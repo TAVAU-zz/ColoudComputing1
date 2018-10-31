@@ -1,9 +1,7 @@
 package org.yhwang.csye6225.courseservice5.service;
 
-import org.yhwang.csye6225.courseservice5.datamodel.Course;
-import org.yhwang.csye6225.courseservice5.datamodel.InMemoryDatabase;
-import org.yhwang.csye6225.courseservice5.datamodel.Professor;
-import org.yhwang.csye6225.courseservice5.datamodel.Program;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import org.yhwang.csye6225.courseservice5.datamodel.*;
 
 import java.util.*;
 

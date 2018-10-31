@@ -1,8 +1,9 @@
 package org.yhwang.csye6225.courseservice5.service;
 
-import org.yhwang.csye6225.courseservice5.datamodel.Course;
-import org.yhwang.csye6225.courseservice5.datamodel.InMemoryDatabase;
-import org.yhwang.csye6225.courseservice5.datamodel.Professor;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import org.yhwang.csye6225.courseservice5.datamodel.*;
 
 import java.util.*;
 import java.util.Date;
@@ -10,57 +11,63 @@ import java.util.Date;
 public class ProfessorsService {
     InMemoryDatabase db = InMemoryDatabase.getInstance();
     //HashMap<String, Course> course_Map = db.getCourseDB();
-    HashMap<Long, Professor> prof_Map = db.getProfessorDB();
+    HashMap<String, Professor> prof_Map = db.getProfessorDB();
 
-    //getting a list of al professor
+    DynamoDBConnector dynamoDBConnector = DynamoDBConnector.getInstance();
+    AmazonDynamoDB client = dynamoDBConnector.getClient();
+    DynamoDBMapper dynamoDBMapper;
+    DynamoDBScanExpression dynamoDBScanExpression;
+
+    public ProfessorsService () {
+        dynamoDBMapper = new DynamoDBMapper(client);
+    }
+
+    //getting a list of all professor
     //GET "..webapi/professors"
     public List<Professor> getAllProfessors() {
-        return new ArrayList<>(prof_Map.values());
+        dynamoDBScanExpression = new DynamoDBScanExpression();
+        List<Professor> professors = dynamoDBMapper.scan(Professor.class, dynamoDBScanExpression);
+        return professors;
     }
-
-    //adding a professor
-    public void addProfessor(String name, String department, Date joiningDate) {
-        //Next id
-        //not thread safe :multi call
-        long nextAvailableId = prof_Map.size() + 1;
-
-        //create a prof obj
-        Professor prof = new Professor(department, nextAvailableId, joiningDate, name);
-        prof_Map.put(nextAvailableId, prof);
-    }
-
 
     public Professor addProfessor(Professor prof) {
-        long profId = prof.getProfessorId();
-        prof_Map.put(profId, prof);
+//        String profId = prof.getProfessorId();
+//        prof_Map.put(profId, prof);
+        dynamoDBMapper.save(prof);
         return prof;
     }
 
     //getting one professor
-    public Professor getProfessor(Long profId) {
-        return prof_Map.get(profId);
+    public Professor getProfessor(String profId) {
+        Professor prof2 = dynamoDBMapper.load(Professor.class, profId);
+        //prof2.setCourses(new ArrayList<Course>());
+        System.out.println("Item retrieved:");
+        System.out.println(prof2.toString());
+        return prof2;
     }
+
     //deleting a professor
-    public Professor deleteProfessor(Long profId) {
-        Professor deletedProfDetails = prof_Map.get(profId);
-        prof_Map.remove(profId);
-        return deletedProfDetails;
+    public Professor deleteProfessor(String profId) {
+//        Professor deletedProfDetails = prof_Map.get(profId);
+//        prof_Map.remove(profId);
+//        return deletedProfDetails;
+        Professor deletedProfessor = dynamoDBMapper.load(Professor.class, profId);
+        dynamoDBMapper.delete(deletedProfessor);
+        return deletedProfessor;
     }
 
     //updating profes info
-    public Professor updateProfessorInformation(Long profId, Professor prof) {
-        Professor oldProfObj = prof_Map.get(profId);
-        profId = oldProfObj.getProfessorId();
-        prof.setProfessorId(profId);
-        //publishing new values
-        prof_Map.put(profId, prof);
-        return  prof;
+    public Professor updateProfessorInformation(String profId, Professor prof) {
+        Professor oldProfessor = dynamoDBMapper.load(Professor.class, profId);
+        dynamoDBMapper.delete(oldProfessor);
+        dynamoDBMapper.save(prof);
+        return prof;
     }
 
     //get prof in a department
     public List<Professor> getProfessorsByDepartment(String department) {
         List<Professor> list = new ArrayList<>();
-        for (Map.Entry<Long, Professor> entry: prof_Map.entrySet()) {
+        for (Map.Entry<String, Professor> entry: prof_Map.entrySet()) {
             if (entry.getValue().getDepartment().equals(department)) {
                 list.add(entry.getValue());
             }
