@@ -21,16 +21,16 @@ public class CoursesResource {
     }
 
     //query by TA
-    @GET
-    @Path("/byTA")
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Course> getCoursesByTA(@QueryParam ("TA") String TA) {
-        if (TA == null) {
-            return coursesService.getAllCourses();
-        } else {
-            return coursesService.getCoursesByTA(TA);
-        }
-    }
+//    @GET
+//    @Path("/byTA")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public List<Course> getCoursesByTA(@QueryParam ("TA") String TA) {
+//        if (TA == null) {
+//            return coursesService.getAllCourses();
+//        } else {
+//            return coursesService.getCoursesByTA(TA);
+//        }
+//    }
 
     //...webapi/courses/
     @GET

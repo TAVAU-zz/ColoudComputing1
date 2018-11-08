@@ -11,8 +11,8 @@ import org.yhwang.csye6225.courseservice5.datamodel.*;
 import java.util.*;
 
 public class LectureService {
-    InMemoryDatabase db = InMemoryDatabase.getInstance();
-    HashMap<String, Lecture> lec_Map = db.lectureDB();
+    //InMemoryDatabase db = InMemoryDatabase.getInstance();
+    //HashMap<String, Lecture> lec_Map = db.lectureDB();
 
     //LectureDatabase lectureDatabase = LectureDatabase.getInstance();
     DynamoDBConnector dynamoDBConnector = DynamoDBConnector.getInstance();

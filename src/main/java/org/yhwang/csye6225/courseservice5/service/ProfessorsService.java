@@ -2,16 +2,19 @@ package org.yhwang.csye6225.courseservice5.service;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import org.yhwang.csye6225.courseservice5.datamodel.*;
 
 import java.util.*;
 import java.util.Date;
 
 public class ProfessorsService {
-    InMemoryDatabase db = InMemoryDatabase.getInstance();
+    //InMemoryDatabase db = InMemoryDatabase.getInstance();
     //HashMap<String, Course> course_Map = db.getCourseDB();
-    HashMap<String, Professor> prof_Map = db.getProfessorDB();
+   // HashMap<String, Professor> prof_Map = db.getProfessorDB();
 
     DynamoDBConnector dynamoDBConnector = DynamoDBConnector.getInstance();
     AmazonDynamoDB client = dynamoDBConnector.getClient();
@@ -37,13 +40,25 @@ public class ProfessorsService {
         return prof;
     }
 
-    //getting one professor
-    public Professor getProfessor(String profId) {
-        Professor prof2 = dynamoDBMapper.load(Professor.class, profId);
+    //getting professor by professorId
+    //GET "..webapi/professors/zhifeng.sun"
+    public List<Professor> getProfessor(String profId) {
+        //Professor prof2 = dynamoDBMapper.load(Professor.class, profId);
         //prof2.setCourses(new ArrayList<Course>());
+        Professor myProfessor= new Professor();
+        myProfessor.setProfessorId(profId);
+        DynamoDBQueryExpression<Professor> queryExpression = new DynamoDBQueryExpression<Professor>();
+        queryExpression.setHashKeyValues(myProfessor);
+        queryExpression.withIndexName("professorId-index");
+        queryExpression.setConsistentRead(false);
+        List<Professor> professors = dynamoDBMapper.query(Professor.class, queryExpression);
+
         System.out.println("Item retrieved:");
-        System.out.println(prof2.toString());
-        return prof2;
+        for (Professor p : professors) {
+            System.out.println(p.toString());
+        }
+
+        return professors;
     }
 
     //deleting a professor
@@ -65,14 +80,14 @@ public class ProfessorsService {
     }
 
     //get prof in a department
-    public List<Professor> getProfessorsByDepartment(String department) {
-        List<Professor> list = new ArrayList<>();
-        for (Map.Entry<String, Professor> entry: prof_Map.entrySet()) {
-            if (entry.getValue().getDepartment().equals(department)) {
-                list.add(entry.getValue());
-            }
-        }
-        return list;
-    }
+//    public List<Professor> getProfessorsByDepartment(String department) {
+//        List<Professor> list = new ArrayList<>();
+//        for (Map.Entry<String, Professor> entry: prof_Map.entrySet()) {
+//            if (entry.getValue().getDepartment().equals(department)) {
+//                list.add(entry.getValue());
+//            }
+//        }
+//        return list;
+//    }
     //
 }

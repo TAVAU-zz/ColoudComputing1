@@ -12,8 +12,8 @@ import org.yhwang.csye6225.courseservice5.datamodel.*;
 import java.util.*;
 
 public class StudentsService {
-    InMemoryDatabase db = InMemoryDatabase.getInstance();
-    HashMap<String, Student> stu_Map = db.getStudentDB();
+    //InMemoryDatabase db = InMemoryDatabase.getInstance();
+    //HashMap<String, Student> stu_Map = db.getStudentDB();
 
     DynamoDBConnector dynamoDBConnector = DynamoDBConnector.getInstance();
     AmazonDynamoDB client = dynamoDBConnector.getClient();
@@ -78,19 +78,19 @@ public class StudentsService {
         //stuId = oldStuObj.getStudentId();
         stu.setStudentId(stuId);
         //publishing new values
-        stu_Map.put(stuId, stu);
+       // stu_Map.put(stuId, stu);
         return stu;
     }
 
     //get stu in a department
-    public List<Student> getStudentsByProgram(String program) {
-        List<Student> list = new ArrayList<>();
-        for (Map.Entry<String, Student> entry: stu_Map.entrySet()) {
-            if (entry.getValue().getProgramName() == program) {
-                list.add(entry.getValue());
-            }
-        }
-        return list;
-    }
+//    public List<Student> getStudentsByProgram(String program) {
+//        List<Student> list = new ArrayList<>();
+//        for (Map.Entry<String, Student> entry: stu_Map.entrySet()) {
+//            if (entry.getValue().getProgramName() == program) {
+//                list.add(entry.getValue());
+//            }
+//        }
+//        return list;
+//    }
     //
 }

@@ -2,12 +2,44 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="courseservice5:war exploded" />
+      <artifact name="courseservice5:war_ddb" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8089e0b7-20a6-4c5d-91bb-b93b3aa3cb63" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/InMemoryDatabase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/resources/ProgramsResource.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/service/ProgramService.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/artifacts/courseservice5_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/courseservice5_war_ddb.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/Course.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/Course.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBConnector.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBConnector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/Lecture.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/Lecture.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/Professor.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/Professor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/Student.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/datamodel/Student.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/resources/CoursesResource.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/resources/CoursesResource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/resources/ProfessorsResource.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/resources/ProfessorsResource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/service/CoursesService.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/service/CoursesService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/service/LectureService.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/service/LectureService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/service/ProfessorsService.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/service/ProfessorsService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/service/StudentsService.class" afterPath="$PROJECT_DIR$/target/classes/org/yhwang/csye6225/courseservice5/service/StudentsService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/courseservice5.war" afterPath="$PROJECT_DIR$/target/courseservice5.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/courseservice5/WEB-INF/classes/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBConnector.class" afterPath="$PROJECT_DIR$/target/courseservice5/WEB-INF/classes/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBConnector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/courseservice5_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/courseservice5_war.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Course.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Course.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBConnector.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBConnector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/InMemoryDatabase.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/InMemoryDatabase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Lecture.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Lecture.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Professor.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Professor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Student.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Student.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/CoursesResource.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/CoursesResource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProfessorsResource.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProfessorsResource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProgramsResource.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProgramsResource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/CoursesService.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/CoursesService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/LectureService.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/LectureService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProfessorsService.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProfessorsService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProgramService.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProgramService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/StudentsService.java" afterPath="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/StudentsService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,25 +55,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProfessorsService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProfessorsService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProfessorsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+            <state relative-caret-position="585">
+              <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
               <folding>
-                <element signature="e#827#828#0" expanded="true" />
-                <element signature="e#886#887#0" expanded="true" />
+                <element signature="e#2065#2076#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentsService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/StudentsService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="37" column="24" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="37" selection-end-column="24" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -49,21 +70,70 @@
       <file leaf-file-name="ProfessorsResource.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProfessorsResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+            <state relative-caret-position="299">
+              <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoursesResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/CoursesResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="23" column="3" lean-forward="false" selection-start-line="23" selection-start-column="3" selection-end-line="32" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoursesService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/CoursesService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1197">
+              <caret line="71" column="6" lean-forward="false" selection-start-line="71" selection-start-column="6" selection-end-line="79" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentsService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/StudentsService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1349">
+              <caret line="80" column="9" lean-forward="false" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Professor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Professor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="51" column="102" lean-forward="true" selection-start-line="51" selection-start-column="85" selection-end-line="51" selection-end-column="102" />
               <folding>
-                <element signature="e#522#523#0" expanded="true" />
-                <element signature="e#575#576#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Professor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Professor.java">
+      <file leaf-file-name="ProgramService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProgramService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="152">
+              <caret line="8" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProgramsResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProgramsResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="51" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,51 +142,9 @@
       <file leaf-file-name="LectureService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/LectureService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="20" column="50" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="20" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1048#1049#0" expanded="true" />
-                <element signature="e#1107#1108#0" expanded="true" />
-                <element signature="e#1529#1530#0" expanded="true" />
-                <element signature="e#1597#1598#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Student.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
-              <caret line="54" column="49" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentsResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/StudentsResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="873">
-              <caret line="64" column="40" lean-forward="true" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+            <state relative-caret-position="114">
+              <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Course.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1368">
-              <caret line="102" column="45" lean-forward="false" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2715#2716#0" expanded="true" />
-                <element signature="e#2777#2778#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -124,25 +152,9 @@
       <file leaf-file-name="InMemoryDatabase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/InMemoryDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3100">
-              <caret line="298" column="29" lean-forward="false" selection-start-line="298" selection-start-column="29" selection-end-line="298" selection-end-column="29" />
-              <folding>
-                <element signature="e#18917#18918#0" expanded="true" />
-                <element signature="e#18951#18952#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoursesService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/CoursesService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1119">
-              <caret line="67" column="22" lean-forward="false" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-              <folding>
-                <element signature="e#812#813#0" expanded="true" />
-                <element signature="e#871#872#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="190">
+              <caret line="10" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -193,25 +205,25 @@
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/ProfessorsResource.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Program.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/CoursesResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProgramsResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBTester.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProgramService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/Database/ProfessorDatabase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBConnector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/Database/LectureDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/LecturesResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/StudentsResource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/StudentsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBConnector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Lecture.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/LectureService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Course.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/InMemoryDatabase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/LectureService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProgramService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProgramsResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/StudentsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/CoursesService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/CoursesResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Professor.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProfessorsResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProfessorsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/InMemoryDatabase.java" />
       </list>
     </option>
   </component>
@@ -242,8 +254,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="62" />
-    <option name="y" value="32" />
+    <option name="x" value="109" />
+    <option name="y" value="383" />
     <option name="width" value="1142" />
     <option name="height" value="706" />
   </component>
@@ -263,9 +275,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -359,6 +368,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -450,9 +462,9 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="settings.editor.selected.configurable" value="com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.17931035" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -473,7 +485,7 @@
     <configuration name="CieraTomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.23" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="courseservice5:war exploded">
+        <artifact name="courseservice5:war_ddb">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -538,7 +550,7 @@
       </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="courseservice5:war exploded" />
+          <artifact name="courseservice5:war_ddb" />
         </option>
       </method>
     </configuration>
@@ -777,12 +789,13 @@
       <workItem from="1539999528341" duration="6438000" />
       <workItem from="1540031841542" duration="79000" />
       <workItem from="1540595402371" duration="31451000" />
-      <workItem from="1540838426626" duration="24261000" />
+      <workItem from="1540838426626" duration="35191000" />
+      <workItem from="1541623202318" duration="3416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197600000" />
+    <option name="totallyTimeSpent" value="211946000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -795,6 +808,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Amazon EC2" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6136364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -810,18 +824,17 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5462046" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3338068" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33238637" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34517047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4630682" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29725364" sideWeight="0.49317408" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23828755" sideWeight="0.49317408" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23667206" sideWeight="0.5068259" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23667206" sideWeight="0.5068259" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -829,6 +842,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -943,13 +957,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/StudentResource.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/courseservice5.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -977,16 +984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1263">
           <caret line="190" column="42" lean-forward="false" selection-start-line="190" selection-start-column="37" selection-end-line="190" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1067,51 +1064,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProgramsResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="13" column="57" lean-forward="false" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/CoursesResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="48" column="35" lean-forward="false" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1361#1362#0" expanded="false" />
-            <element signature="e#1416#1417#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1134,19 +1091,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProgramService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/amazonaws/aws-java-sdk-dynamodb/1.11.297/aws-java-sdk-dynamodb-1.11.297.jar!/com/amazonaws/services/dynamodbv2/datamodeling/DynamoDBMapper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="71" column="32" lean-forward="false" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1155,29 +1103,7 @@
         <state relative-caret-position="304">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
             <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Lecture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1192,53 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="54" column="49" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="102" column="45" lean-forward="false" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2715#2716#0" expanded="true" />
-            <element signature="e#2777#2778#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/CoursesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1119">
-          <caret line="67" column="22" lean-forward="false" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-          <folding>
-            <element signature="e#812#813#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/LectureService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="20" column="50" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="20" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1529#1530#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/StudentsResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="873">
@@ -1247,52 +1126,160 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/StudentsService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="37" column="24" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="37" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23164">
+          <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Lecture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-493">
+          <caret line="2" column="71" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="56" lean-forward="false" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/DynamoDBConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#925#926#0" expanded="false" />
+            <element signature="e#950#951#0" expanded="false" />
+            <element signature="e#986#987#0" expanded="false" />
+            <element signature="e#1009#1010#0" expanded="false" />
+            <element signature="e#2571#2572#0" expanded="false" />
+            <element signature="e#2617#2618#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/InMemoryDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3100">
-          <caret line="298" column="29" lean-forward="false" selection-start-line="298" selection-start-column="29" selection-end-line="298" selection-end-column="29" />
-          <folding>
-            <element signature="e#18917#18918#0" expanded="true" />
-            <element signature="e#18951#18952#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="190">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/LectureService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProgramService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProgramsResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="51" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/StudentsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1349">
+          <caret line="80" column="9" lean-forward="false" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/CoursesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="71" column="6" lean-forward="false" selection-start-line="71" selection-start-column="6" selection-end-line="79" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/CoursesResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="23" column="3" lean-forward="false" selection-start-line="23" selection-start-column="3" selection-end-line="32" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/resources/ProfessorsResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        <state relative-caret-position="299">
+          <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Professor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="51" column="102" lean-forward="true" selection-start-line="51" selection-start-column="85" selection-end-line="51" selection-end-column="102" />
           <folding>
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/service/ProfessorsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+        <state relative-caret-position="585">
+          <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
           <folding>
-            <element signature="e#827#828#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#2065#2076#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/yhwang/csye6225/courseservice5/datamodel/Professor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1302,11 +1289,11 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>courseservice5:war exploded</last-edited>
+          <last-edited>courseservice5:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.30114943" />
                 <option value="0.5" />
               </list>
             </option>

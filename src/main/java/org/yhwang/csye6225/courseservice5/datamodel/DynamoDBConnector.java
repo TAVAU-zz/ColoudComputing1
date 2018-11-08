@@ -1,5 +1,6 @@
 package org.yhwang.csye6225.courseservice5.datamodel;
 
+import com.amazonaws.auth.InstanceProfileCredentialsProvider;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
@@ -18,6 +19,7 @@ public class DynamoDBConnector {
 
     public DynamoDBConnector()  {
         if (client == null) {
+            //InstanceProfileCredentialsProvider credentialsProvider = new InstanceProfileCredentialsProvider(false);
             ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
             credentialsProvider.getCredentials();
             System.out.println("credentialsProvider is " + credentialsProvider);

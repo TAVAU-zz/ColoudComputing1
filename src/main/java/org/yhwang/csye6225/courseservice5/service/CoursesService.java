@@ -9,8 +9,8 @@ import org.yhwang.csye6225.courseservice5.datamodel.*;
 import java.util.*;
 
 public class CoursesService {
-    InMemoryDatabase db = InMemoryDatabase.getInstance();
-    HashMap<String, Course> course_Map = db.getCourseDB();
+    //InMemoryDatabase db = InMemoryDatabase.getInstance();
+    //HashMap<String, Course> course_Map = db.getCourseDB();
 
     DynamoDBConnector dynamoDBConnector = DynamoDBConnector.getInstance();
     AmazonDynamoDB client = dynamoDBConnector.getClient();
@@ -69,14 +69,14 @@ public class CoursesService {
     }
 
     //get course in a department
-    public List<Course> getCoursesByTA(String studentName) {
-        List<Course> list = new ArrayList<>();
-        for (Map.Entry<String, Course> entry: course_Map.entrySet()) {
-            if (entry.getValue().getTA() == studentName) {
-                list.add(entry.getValue());
-            }
-        }
-        return list;
-    }
+//    public List<Course> getCoursesByTA(String studentName) {
+//        List<Course> list = new ArrayList<>();
+//        for (Map.Entry<String, Course> entry: course_Map.entrySet()) {
+//            if (entry.getValue().getTA() == studentName) {
+//                list.add(entry.getValue());
+//            }
+//        }
+//        return list;
+//    }
     //
 }

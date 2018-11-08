@@ -2,7 +2,7 @@
   <artifact type="war" name="courseservice5:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="courseservice5.war">
-      <element id="artifact" artifact-name="courseservice5:war exploded" />
+      <element id="artifact" artifact-name="courseservice5:war_ddb" />
     </root>
   </artifact>
 </component>
