@@ -2,6 +2,7 @@ package org.yhwang.csye6225.courseservice5.service;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.TableCollection;
@@ -40,8 +41,6 @@ public class StudentsService {
 
     //adding a student
     public Student addStudent(Student student) {
-        //Next id
-        //not thread safe :multi call
 
         //in-memory database
         //String studentId = student.getStudentId();
@@ -53,11 +52,21 @@ public class StudentsService {
     }
 
     //getting one student
-    public Student getStudent(String stuId) {
-        Student student = dynamoDBMapper.load(Student.class, stuId);
+    public List<Student> getStudent(String stuId) {
+        Student myStudent= new Student();
+        myStudent.setStudentId(stuId);
+        DynamoDBQueryExpression<Student> queryExpression = new DynamoDBQueryExpression<>();
+        queryExpression.setHashKeyValues(myStudent);
+        queryExpression.withIndexName("studentId-index");
+        queryExpression.setConsistentRead(false);
+        List<Student> students = dynamoDBMapper.query(Student.class, queryExpression);
+
         System.out.println("Item retrieved:");
-        System.out.println(student.toString());
-        return student;
+        for (Student s : students) {
+            System.out.println(s.toString());
+        }
+
+        return students;
 
     }
 
@@ -76,7 +85,9 @@ public class StudentsService {
         Student student = dynamoDBMapper.load(Student.class, stuId);
         //Student oldStuObj = stu_Map.get(stuId);
         //stuId = oldStuObj.getStudentId();
-        stu.setStudentId(stuId);
+
+        dynamoDBMapper.delete(student);
+        dynamoDBMapper.save(stu);
         //publishing new values
        // stu_Map.put(stuId, stu);
         return stu;

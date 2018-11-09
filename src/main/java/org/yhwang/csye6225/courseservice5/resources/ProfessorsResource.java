@@ -31,7 +31,7 @@ public class ProfessorsResource {
 //        }
 //    }
 
-    //...webapi/professors/1
+    //...webapi/professors/zhifeng.sun
     @GET
     @Path("/{professorId}")
     @Produces(MediaType.APPLICATION_JSON)

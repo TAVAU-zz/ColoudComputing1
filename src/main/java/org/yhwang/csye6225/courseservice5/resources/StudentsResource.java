@@ -30,11 +30,11 @@ public class StudentsResource {
 //        }
 //    }
 
-    //...webapi/students/1
+    //...webapi/students/ciera.wang
     @GET
     @Path("/{studentId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Student getStudent(@PathParam("studentId")String stuId) {
+    public List<Student> getStudent(@PathParam("studentId")String stuId) {
         return studentsService.getStudent(stuId);
 
     }

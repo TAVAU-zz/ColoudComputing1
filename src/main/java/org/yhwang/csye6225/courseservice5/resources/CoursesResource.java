@@ -36,7 +36,7 @@ public class CoursesResource {
     @GET
     @Path("/{courseId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Course getCourse(@PathParam("courseId")String courId) {
+    public List<Course> getCourse(@PathParam("courseId")String courId) {
         return coursesService.getCourse(courId);
 
     }

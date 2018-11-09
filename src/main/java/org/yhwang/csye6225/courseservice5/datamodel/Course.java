@@ -8,22 +8,18 @@ import java.util.*;
 @DynamoDBTable(tableName ="course")
 public class Course {
 
-
     private String Id;
     private String courseId;
-    //private String courseName;
-    //private List<Lecture> lectures;
+    private String professorId;
+    private String TAId;
+    private String department;
     private String boardId;
     private List<String> enrolledStudent;
-    private String TAId;
-    private String professorId;
 
     public Course(){}
 
     public Course(String courseId, String courseName) {
         this.courseId = courseId;
-       // this.courseName = courseName;
-      //  this.lectures = null;
         this.boardId = null;
         this.enrolledStudent = null;
         this.TAId = null;
@@ -40,8 +36,7 @@ public class Course {
         Id = id;
     }
 
-   // @DynamoDBHashKey(attributeName = "courseId")
-    @DynamoDBIndexHashKey(attributeName = "courseId")
+    @DynamoDBIndexHashKey(attributeName = "courseId", globalSecondaryIndexName = "courseId-index")
     public String getCourseId() {
         return courseId;
     }
@@ -49,31 +44,40 @@ public class Course {
     public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
-//
-//    @DynamoDBAttribute(attributeName = "courseName")
-//    public String getCourseName() {
-//        return courseName;
-//    }
-//
-//    public void setCourseName(String courseName) {
-//        this.courseName = courseName;
-//    }
-//
-//    @DynamoDBAttribute(attributeName = "lectures")
-//    public List<Lecture> getLectures() {
-//        return lectures;
-//    }
-//
-//    public void setLectures(List<Lecture> lectures) {
-//        this.lectures = lectures;
-//    }
+
+    @DynamoDBAttribute(attributeName = "professorId")
+    public String getProfessorId() {
+        return professorId;
+    }
+
+    public void setProfessorId(String professorId) {
+        this.professorId = professorId;
+    }
+
+    @DynamoDBAttribute(attributeName = "TAId")
+    public String getTAId() {
+        return TAId;
+    }
+
+    public void setTAId(String TAId) {
+        this.TAId = TAId;
+    }
+
+    @DynamoDBAttribute(attributeName = "department")
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
 
     @DynamoDBAttribute(attributeName = "boardId")
-    public String getBoard() {
+    public String getBoardId() {
         return boardId;
     }
 
-    public void setBoard(String boardId) {
+    public void setBoardId(String boardId) {
         this.boardId = boardId;
     }
 
@@ -84,23 +88,5 @@ public class Course {
 
     public void setEnrolledStudent(List<String> enrolledStudent) {
         this.enrolledStudent = enrolledStudent;
-    }
-
-    @DynamoDBAttribute(attributeName = "TAId")
-    public String getTA() {
-        return TAId;
-    }
-
-    public void setTA(String TAId) {
-        this.TAId = TAId;
-    }
-
-    @DynamoDBAttribute(attributeName = "professorId")
-    public String getAssociatedProfessor() {
-        return professorId;
-    }
-
-    public void setAssociatedProfessor(String professorId) {
-        this.professorId = professorId;
     }
 }

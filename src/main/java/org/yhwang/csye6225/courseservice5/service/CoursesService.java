@@ -40,9 +40,21 @@ public class CoursesService {
     }
 
     //getting one course
-    public Course getCourse(String courseId) {
-        //return course_Map.get(courseId);
-        return dynamoDBMapper.load(Course.class, courseId);
+    public List<Course> getCourse(String courseId) {
+        Course myCourse= new Course();
+        myCourse.setCourseId(courseId);
+        DynamoDBQueryExpression<Course> queryExpression = new DynamoDBQueryExpression<>();
+        queryExpression.setHashKeyValues(myCourse);
+        queryExpression.withIndexName("courseId-index");
+        queryExpression.setConsistentRead(false);
+        List<Course> courses = dynamoDBMapper.query(Course.class, queryExpression);
+
+        System.out.println("Item retrieved:");
+        for (Course c : courses) {
+            System.out.println(c.toString());
+        }
+
+        return courses;
     }
 
     //deleting a course
@@ -68,15 +80,4 @@ public class CoursesService {
         return course;
     }
 
-    //get course in a department
-//    public List<Course> getCoursesByTA(String studentName) {
-//        List<Course> list = new ArrayList<>();
-//        for (Map.Entry<String, Course> entry: course_Map.entrySet()) {
-//            if (entry.getValue().getTA() == studentName) {
-//                list.add(entry.getValue());
-//            }
-//        }
-//        return list;
-//    }
-    //
 }
