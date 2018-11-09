@@ -34,8 +34,6 @@ public class ProfessorsService {
     }
 
     public Professor addProfessor(Professor prof) {
-//        String profId = prof.getProfessorId();
-//        prof_Map.put(profId, prof);
         dynamoDBMapper.save(prof);
         return prof;
     }
@@ -43,16 +41,7 @@ public class ProfessorsService {
     //getting professor by professorId
     //GET "..webapi/professors/zhifeng.sun"
     public List<Professor> getProfessor(String profId) {
-        //Professor prof2 = dynamoDBMapper.load(Professor.class, profId);
-        //prof2.setCourses(new ArrayList<Course>());
-        Professor myProfessor= new Professor();
-        myProfessor.setProfessorId(profId);
-        DynamoDBQueryExpression<Professor> queryExpression = new DynamoDBQueryExpression<Professor>();
-        queryExpression.setHashKeyValues(myProfessor);
-        queryExpression.withIndexName("professorId-index");
-        queryExpression.setConsistentRead(false);
-        List<Professor> professors = dynamoDBMapper.query(Professor.class, queryExpression);
-
+        List<Professor> professors = queryProfessors(profId);
         System.out.println("Item retrieved:");
         for (Professor p : professors) {
             System.out.println(p.toString());
@@ -62,21 +51,31 @@ public class ProfessorsService {
     }
 
     //deleting a professor
-    public Professor deleteProfessor(String profId) {
-//        Professor deletedProfDetails = prof_Map.get(profId);
-//        prof_Map.remove(profId);
-//        return deletedProfDetails;
-        Professor deletedProfessor = dynamoDBMapper.load(Professor.class, profId);
-        dynamoDBMapper.delete(deletedProfessor);
+    public List<Professor> deleteProfessor(String profId) {
+        List<Professor> deletedProfessor = queryProfessors(profId);
+        if (deletedProfessor == null) {
+            System.out.println("Professor needed to be deleted does not exists");
+        } else {
+            for (Professor p : deletedProfessor) {
+                dynamoDBMapper.delete(p);
+            }
+        }
         return deletedProfessor;
     }
 
     //updating profes info
-    public Professor updateProfessorInformation(String profId, Professor prof) {
-        Professor oldProfessor = dynamoDBMapper.load(Professor.class, profId);
-        dynamoDBMapper.delete(oldProfessor);
+    public List<Professor> updateProfessorInformation(String profId, Professor prof) {
+        List<Professor> professors = queryProfessors(profId);
+        if (professors == null) {
+            System.out.println("Professor needed to be updated does not exists");
+            return null;
+        } else {
+            for (Professor p : professors) {
+                dynamoDBMapper.delete(p);
+            }
+        }
         dynamoDBMapper.save(prof);
-        return prof;
+        return queryProfessors(profId);
     }
 
     //get prof in a department
@@ -90,4 +89,15 @@ public class ProfessorsService {
 //        return list;
 //    }
     //
+
+    private List<Professor> queryProfessors(String profId) {
+        Professor myProfessor= new Professor();
+        myProfessor.setProfessorId(profId);
+        DynamoDBQueryExpression<Professor> queryExpression = new DynamoDBQueryExpression<Professor>();
+        queryExpression.setHashKeyValues(myProfessor);
+        queryExpression.withIndexName("professorId-index");
+        queryExpression.setConsistentRead(false);
+        List<Professor> professors = dynamoDBMapper.query(Professor.class, queryExpression);
+        return professors;
+    }
 }

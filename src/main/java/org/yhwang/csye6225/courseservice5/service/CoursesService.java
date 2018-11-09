@@ -32,22 +32,13 @@ public class CoursesService {
 
     //add course by id
     public Course addCourse(Course course){
-        //DynamoDBQueryExpression<Course> query = new DynamoDBQueryExpression<Course>().withHashKeyValues(course);
-        //List<Course> queriedCourses = dynamoDBMapper.query(Course.class, query);
-
         dynamoDBMapper.save(course);
         return course;
     }
 
     //getting one course
     public List<Course> getCourse(String courseId) {
-        Course myCourse= new Course();
-        myCourse.setCourseId(courseId);
-        DynamoDBQueryExpression<Course> queryExpression = new DynamoDBQueryExpression<>();
-        queryExpression.setHashKeyValues(myCourse);
-        queryExpression.withIndexName("courseId-index");
-        queryExpression.setConsistentRead(false);
-        List<Course> courses = dynamoDBMapper.query(Course.class, queryExpression);
+        List<Course> courses = queryCourses(courseId);
 
         System.out.println("Item retrieved:");
         for (Course c : courses) {
@@ -58,26 +49,44 @@ public class CoursesService {
     }
 
     //deleting a course
-    public Course deleteCourse(String courseId) {
-//        Course deletedCourseDetails = course_Map.get(courseId);
-//        course_Map.remove(courseId);
-//        return deletedCourseDetails;
-        Course deletedCourse = dynamoDBMapper.load(Course.class, courseId);
-        dynamoDBMapper.delete(deletedCourse);
-        return deletedCourse;
+    public List<Course> deleteCourse(String courseId) {
+        List<Course> deletedCourses = queryCourses(courseId);
+        System.out.println("courses deleted: ");
+        for (Course c : deletedCourses) {
+            System.out.println(c);
+            dynamoDBMapper.delete(c);
+        }
+        return deletedCourses;
     }
 
     //updating course info
-    public Course updateCourseInformation(String courseId, Course course) {
-//        Course oldCourseObj = course_Map.get(courseId);
-//        courseId = oldCourseObj.getCourseId();
-//        course.setCourseId(courseId);
-//        course_Map.put(courseId, course);
-//        return course;
-        Course oldCourse = dynamoDBMapper.load(Course.class, courseId);
-        dynamoDBMapper.delete(oldCourse);
-        dynamoDBMapper.save(course);
-        return course;
+    public List<Course> updateCourseInformation(String courseId, Course course) {
+        List<Course> queryResult = queryCourses(courseId);
+        if (queryResult == null) {
+            System.out.println("Course need to be updated does not exists");
+            return null;
+        } else {
+            for (Course c : queryResult) {
+                dynamoDBMapper.delete(c);
+            }
+            dynamoDBMapper.save(course);
+        }
+        return queryCourses(courseId);
     }
 
+    /**
+     * query a list of courses according to specific courseId
+     * @param courseId Global Secondary Index
+     * @return list of query result of the courses
+     */
+    private List<Course> queryCourses(String courseId) {
+        Course myCourse= new Course();
+        myCourse.setCourseId(courseId);
+        DynamoDBQueryExpression<Course> queryExpression = new DynamoDBQueryExpression<>();
+        queryExpression.setHashKeyValues(myCourse);
+        queryExpression.withIndexName("courseId-index");
+        queryExpression.setConsistentRead(false);
+        List<Course> courses = dynamoDBMapper.query(Course.class, queryExpression);
+        return courses;
+    }
 }

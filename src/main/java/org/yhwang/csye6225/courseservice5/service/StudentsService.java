@@ -41,56 +41,48 @@ public class StudentsService {
 
     //adding a student
     public Student addStudent(Student student) {
-
-        //in-memory database
-        //String studentId = student.getStudentId();
-        //return stu_Map.put(studentId, student);
-
         dynamoDBMapper.save(student);
         return student;
-
     }
 
     //getting one student
     public List<Student> getStudent(String stuId) {
-        Student myStudent= new Student();
-        myStudent.setStudentId(stuId);
-        DynamoDBQueryExpression<Student> queryExpression = new DynamoDBQueryExpression<>();
-        queryExpression.setHashKeyValues(myStudent);
-        queryExpression.withIndexName("studentId-index");
-        queryExpression.setConsistentRead(false);
-        List<Student> students = dynamoDBMapper.query(Student.class, queryExpression);
-
+        List<Student> students = queryStudents(stuId);
         System.out.println("Item retrieved:");
         for (Student s : students) {
             System.out.println(s.toString());
         }
-
         return students;
 
     }
 
     //deleting a student
-    public Student deleteStudent(String stuId) {
-//        Student deletedStuDetails = stu_Map.get(stuId);
-//        stu_Map.remove(stuId);
-//        return deletedStuDetails;
-        Student student = dynamoDBMapper.load(Student.class, stuId);
-        dynamoDBMapper.delete(student);
-        return student;
+    public List<Student> deleteStudent(String stuId) {
+        List<Student> deletedStudents = queryStudents(stuId);
+        if (deletedStudents == null) {
+            System.out.println("The student need to be deleted does not exists");
+        } else {
+            for (Student s : deletedStudents) {
+                dynamoDBMapper.delete(s);
+            }
+        }
+
+        return deletedStudents;
     }
 
     //updating student info
-    public Student updateStudentInformation(String stuId, Student stu) {
-        Student student = dynamoDBMapper.load(Student.class, stuId);
-        //Student oldStuObj = stu_Map.get(stuId);
-        //stuId = oldStuObj.getStudentId();
-
-        dynamoDBMapper.delete(student);
-        dynamoDBMapper.save(stu);
-        //publishing new values
-       // stu_Map.put(stuId, stu);
-        return stu;
+    public List<Student> updateStudentInformation(String stuId, Student stu) {
+        List<Student> students = queryStudents(stuId);
+        if (students == null) {
+            System.out.println("The student need to be updated does not exists");
+            return null;
+        } else {
+            for (Student s : students) {
+                dynamoDBMapper.delete(s);
+            }
+            dynamoDBMapper.save(stu);
+        }
+        return queryStudents(stuId);
     }
 
     //get stu in a department
@@ -104,4 +96,15 @@ public class StudentsService {
 //        return list;
 //    }
     //
+
+    private List<Student> queryStudents(String stuId) {
+        Student myStudent= new Student();
+        myStudent.setStudentId(stuId);
+        DynamoDBQueryExpression<Student> queryExpression = new DynamoDBQueryExpression<>();
+        queryExpression.setHashKeyValues(myStudent);
+        queryExpression.withIndexName("studentId-index");
+        queryExpression.setConsistentRead(false);
+        List<Student> students = dynamoDBMapper.query(Student.class, queryExpression);
+        return students;
+    }
 }

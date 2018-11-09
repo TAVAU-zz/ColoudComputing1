@@ -54,7 +54,7 @@ public class CoursesResource {
     @Path("/{courseId}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Course updateStudent(@PathParam("courseId")String courseId, Course course) {
+    public List<Course> updateStudent(@PathParam("courseId")String courseId, Course course) {
         return coursesService.updateCourseInformation(courseId, course);
 
     }
@@ -62,7 +62,7 @@ public class CoursesResource {
     @DELETE
     @Path("/{courseId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Course deleteStudent(@PathParam("courseId")String courseId) {
+    public List<Course> deleteStudent(@PathParam("courseId")String courseId) {
         return coursesService.deleteCourse(courseId);
     }
 }

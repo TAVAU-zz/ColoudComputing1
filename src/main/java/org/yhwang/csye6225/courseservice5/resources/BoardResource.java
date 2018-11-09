@@ -38,7 +38,7 @@ public class BoardResource {
     @Path("/{boardId}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Board updateBoard(@PathParam("boardId")String boardId, Board board) {
+    public List<Board> updateBoard(@PathParam("boardId")String boardId, Board board) {
         return boardService.updateBoardInformation(boardId, board);
 
     }
@@ -46,7 +46,7 @@ public class BoardResource {
     @DELETE
     @Path("/{boardId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Board deleteBoard(@PathParam("boardId")String boardId) {
+    public List<Board> deleteBoard(@PathParam("boardId")String boardId) {
         return boardService.deleteBoard(boardId);
     }
 }

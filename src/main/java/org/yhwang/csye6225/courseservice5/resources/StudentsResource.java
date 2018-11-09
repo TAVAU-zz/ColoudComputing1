@@ -53,7 +53,7 @@ public class StudentsResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     //@Produces(MediaType.APPLICATION_XML)
-    public Student updateStudent(@PathParam("studentId")String stuId, Student stu) {
+    public List<Student> updateStudent(@PathParam("studentId")String stuId, Student stu) {
         return studentsService.updateStudentInformation(stuId, stu);
 
     }
@@ -61,7 +61,7 @@ public class StudentsResource {
     @DELETE
     @Path("/{studentId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Student deleteStudent(@PathParam("studentId")String stuId) {
+    public List<Student> deleteStudent(@PathParam("studentId")String stuId) {
         return studentsService.deleteStudent(stuId);
     }
 }

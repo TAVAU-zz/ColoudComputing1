@@ -37,7 +37,7 @@ public class AnnouncementResource {
     @Path("/{announcementId}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Announcement updateAnnouncement(@PathParam("announcementId")String announcementId, Announcement announcement) {
+    public List<Announcement> updateAnnouncement(@PathParam("announcementId")String announcementId, Announcement announcement) {
         return announcementService.updateAnnouncementInformation(announcementId, announcement);
 
     }
@@ -45,7 +45,7 @@ public class AnnouncementResource {
     @DELETE
     @Path("/{announcementId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Announcement deleteAnnouncement(@PathParam("announcementId")String announcementId) {
+    public List<Announcement> deleteAnnouncement(@PathParam("announcementId")String announcementId) {
         return announcementService.deleteAnnouncement(announcementId);
     }
 }
