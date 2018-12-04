@@ -77,11 +77,12 @@ public class AnnouncementService {
     }
 
     private List<Announcement> queryAnnouncements(String boardId_announcementId) {
+
         String[] keys = boardId_announcementId.split("_");
         String partitionKey = keys[0];
         String rangeKey = keys[1];
 
-        Announcement myAnnouncement= new Announcement();
+        Announcement myAnnouncement = new Announcement();
         myAnnouncement.setBoardId(partitionKey);
         Condition rangeKeyCondition = new Condition();
         rangeKeyCondition.withComparisonOperator(ComparisonOperator.EQ)
@@ -89,10 +90,11 @@ public class AnnouncementService {
 
         DynamoDBQueryExpression<Announcement> queryExpression = new DynamoDBQueryExpression<>();
         queryExpression.setHashKeyValues(myAnnouncement);
-        queryExpression.withRangeKeyCondition("announcementId",rangeKeyCondition);
+        queryExpression.withRangeKeyCondition("announcementId", rangeKeyCondition);
         queryExpression.setConsistentRead(false);
 
         List<Announcement> announcements = dynamoDBMapper.query(Announcement.class, queryExpression);
         return announcements;
+
     }
 }

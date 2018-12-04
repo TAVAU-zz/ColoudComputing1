@@ -4,6 +4,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import org.yhwang.csye6225.courseservice5.SNS.SNSClientConnector;
 import org.yhwang.csye6225.courseservice5.datamodel.*;
 
 import java.util.*;
@@ -16,6 +17,8 @@ public class CoursesService {
     AmazonDynamoDB client = dynamoDBConnector.getClient();
     DynamoDBMapper dynamoDBMapper;
     DynamoDBScanExpression dynamoDBScanExpression;
+
+    SNSClientConnector snsClientConnector = SNSClientConnector.getInstance();
 
 
     public CoursesService() {
@@ -32,6 +35,8 @@ public class CoursesService {
 
     //add course by id
     public Course addCourse(Course course){
+        //String notificationTopic = course.getNotificationTopic();
+        snsClientConnector.createTopic(course);
         dynamoDBMapper.save(course);
         return course;
     }
@@ -55,6 +60,7 @@ public class CoursesService {
         for (Course c : deletedCourses) {
             System.out.println(c);
             dynamoDBMapper.delete(c);
+            snsClientConnector.deleteTopic(c);
         }
         return deletedCourses;
     }
@@ -68,8 +74,10 @@ public class CoursesService {
         } else {
             for (Course c : queryResult) {
                 dynamoDBMapper.delete(c);
+                snsClientConnector.deleteTopic(c);
             }
             dynamoDBMapper.save(course);
+            snsClientConnector.createTopic(course);
         }
         return queryCourses(courseId);
     }

@@ -10,6 +10,10 @@ import com.amazonaws.services.dynamodbv2.model.ListTablesResult;
 import javafx.scene.image.Image;
 import org.yhwang.csye6225.courseservice5.datamodel.*;
 
+import org.yhwang.csye6225.courseservice5.SNS.*;
+import org.yhwang.csye6225.courseservice5.service.CoursesService;
+
+
 import java.util.*;
 
 public class StudentsService {
@@ -21,6 +25,9 @@ public class StudentsService {
     DynamoDBMapper dynamoDBMapper;
     DynamoDB dynamoDB;
     DynamoDBScanExpression dynamoDBScanExpression;
+
+    SNSClientConnector snsClientConnector = SNSClientConnector.getInstance();
+    CoursesService coursesService = new CoursesService();
 
     public StudentsService() {
         //dynamoDb = new DynamoDBConnector();
@@ -85,26 +92,46 @@ public class StudentsService {
         return queryStudents(stuId);
     }
 
-    //get stu in a department
-//    public List<Student> getStudentsByProgram(String program) {
-//        List<Student> list = new ArrayList<>();
-//        for (Map.Entry<String, Student> entry: stu_Map.entrySet()) {
-//            if (entry.getValue().getProgramName() == program) {
-//                list.add(entry.getValue());
-//            }
-//        }
-//        return list;
-//    }
-    //
-
     private List<Student> queryStudents(String stuId) {
         Student myStudent= new Student();
         myStudent.setStudentId(stuId);
         DynamoDBQueryExpression<Student> queryExpression = new DynamoDBQueryExpression<>();
         queryExpression.setHashKeyValues(myStudent);
         queryExpression.withIndexName("studentId-index");
-        queryExpression.setConsistentRead(false);
+        queryExpression.setConsistentRead(false);//https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html
         List<Student> students = dynamoDBMapper.query(Student.class, queryExpression);
         return students;
+    }
+
+    public List<Course> registerCourses(String stuId, List<Course> courses) {
+        List<Student> students = queryStudents(stuId);
+        if (students.size() != 0) {
+            for (Student student : students) {
+                dynamoDBMapper.delete(student);
+                for (Course course : courses) {
+                    String topic = course.getNotificationTopic();
+                    if (!getAllCourseTopics().contains(topic)) {
+                        snsClientConnector.createTopic(course);
+                    }
+                    snsClientConnector.subscribeTopic(course, student);
+                    student.getRegisteredCourses().add(course.getCourseId());
+                }
+                dynamoDBMapper.save(student);
+            }
+            return courses;
+        } else {
+            return null;
+        }
+
+    }
+
+    public List<String> getAllCourseTopics() {
+        List<String> courseTopics = new ArrayList<>();
+        List<Course> courses = coursesService.getAllCourses();
+        for (Course course : courses) {
+            //System.out.println(course.getNotificationTopic());
+            courseTopics.add(course.getNotificationTopic());
+        }
+        return courseTopics;
     }
 }

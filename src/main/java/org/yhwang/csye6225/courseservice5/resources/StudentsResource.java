@@ -32,11 +32,10 @@ public class StudentsResource {
 
     //...webapi/students/ciera.wang
     @GET
-    @Path("/{studentId}")
+    @Path("/{studentId}")//
     @Produces(MediaType.APPLICATION_JSON)
     public List<Student> getStudent(@PathParam("studentId")String stuId) {
         return studentsService.getStudent(stuId);
-
     }
 
     @POST
@@ -46,6 +45,15 @@ public class StudentsResource {
     public Student addStudent(Student stu) {
         studentsService.addStudent(stu);
         return stu;
+    }
+
+    @POST
+    @Path("/{studentId}/register")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public List<Course> registerCourses(@PathParam("studentId")String stuId, List<Course> courses) {
+        studentsService.registerCourses(stuId, courses);
+        return courses;
     }
 
     @PUT

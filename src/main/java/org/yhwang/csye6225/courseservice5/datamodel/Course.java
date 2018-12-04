@@ -15,6 +15,7 @@ public class Course {
     private String department;
     private String boardId;
     private List<String> enrolledStudent;
+    private String notificationTopic;
 
     public Course(){}
 
@@ -88,5 +89,14 @@ public class Course {
 
     public void setEnrolledStudent(List<String> enrolledStudent) {
         this.enrolledStudent = enrolledStudent;
+    }
+
+    @DynamoDBAttribute(attributeName = "notificationTopic")
+    public String getNotificationTopic() {
+        return notificationTopic;
+    }
+
+    public void setNotificationTopic(String notificationTopic) {
+        this.notificationTopic = notificationTopic;
     }
 }
