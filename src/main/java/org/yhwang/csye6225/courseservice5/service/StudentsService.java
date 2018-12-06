@@ -23,17 +23,14 @@ public class StudentsService {
     DynamoDBConnector dynamoDBConnector = DynamoDBConnector.getInstance();
     AmazonDynamoDB client = dynamoDBConnector.getClient();
     DynamoDBMapper dynamoDBMapper;
-    DynamoDB dynamoDB;
+    //DynamoDB dynamoDB;
     DynamoDBScanExpression dynamoDBScanExpression;
 
     SNSClientConnector snsClientConnector = SNSClientConnector.getInstance();
     CoursesService coursesService = new CoursesService();
 
     public StudentsService() {
-        //dynamoDb = new DynamoDBConnector();
-        //dynamoDb.init();
         dynamoDBMapper = new DynamoDBMapper(client);
-        dynamoDB = new DynamoDB(client);
     }
 
     //getting a list of all students
@@ -115,6 +112,7 @@ public class StudentsService {
                     }
                     snsClientConnector.subscribeTopic(course, student);
                     student.getRegisteredCourses().add(course.getCourseId());
+                    course.getEnrolledStudent().add(student.getEmail());
                 }
                 dynamoDBMapper.save(student);
             }

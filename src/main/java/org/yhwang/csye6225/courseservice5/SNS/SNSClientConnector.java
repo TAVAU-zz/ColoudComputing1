@@ -5,6 +5,7 @@ import com.amazonaws.services.sns.AmazonSNSClientBuilder;
 import com.amazonaws.services.sns.model.*;
 import org.yhwang.csye6225.courseservice5.datamodel.Course;
 import org.yhwang.csye6225.courseservice5.datamodel.Student;
+import org.yhwang.csye6225.courseservice5.datamodel.Announcement;
 
 public class SNSClientConnector {
     AmazonSNS amazonSNSClient;
@@ -68,13 +69,16 @@ public class SNSClientConnector {
         System.out.println("DeleteTopicRequest - " + amazonSNSClient.getCachedResponseMetadata(deleteTopicRequest));
     }
 
-    public void publishTopic(Course course) {
+    public void publishTopic(Announcement announcement) {
         //publish to an SNS topic
-        String msg = "My text published to SNS topic with email endpoint";
-        String topicArn = "arn:aws:sns:us-east-2:432346481126:" + course.getNotificationTopic();
+        String msg = announcement.getAnnouncementText();
+       // String topicArn = "arn:aws:sns:us-east-2:432346481126:" + course.getNotificationTopic();
+        String topicArn = "arn:aws:sns:us-east-2:432346481126:" + announcement.getBoardId() + "topic";
         PublishRequest publishRequest = new PublishRequest(topicArn, msg);
         PublishResult publishResult = amazonSNSClient.publish(publishRequest);
         //print MessageId of message published to SNS topic
         System.out.println("MessageId - " + publishResult.getMessageId());
     }
+
+    //announcement -> Topic arn -> publish
 }
