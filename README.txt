@@ -49,14 +49,14 @@ POST
 create a new student
 body:
 {
-    "department": "IS",
-    "firstName": "Emma",
+    "department": "CS",
+    "firstName": "Wang",
     "joiningDate": "09-01-2017",
-    "lastName": "Li",
+    "lastName": "Ciera",
     "registeredCourses": [
-        "info6205"
     ],
-    "studentId": "emma.li"
+    "studentId": "ciera.wang",
+    "email": "yuhanwang001@gmail.com"
 }
 
 GET board by ID
@@ -86,3 +86,33 @@ body:
     "boardId": "info5100"
 }
 
+For assingment3:
+POST
+http://csye6225-env.25auac3tzp.us-east-2.elasticbeanstalk.com/webapi/students/{studentId}/register
+[
+    {
+        "TAId": "sisley.wang",
+        "boardId": "cs800",
+        "courseId": "cs800",
+        "department": "CS",
+        "enrolledStudent": [
+            "yuhanwang001@gmail.com"
+        ],
+        "notificationTopic": "cs800topic",
+        "professorId": "zhifeng.sun"
+    },
+    {
+        "TAId": "sisley.wang",
+        "boardId": "cs700",
+        "courseId": "cs700",
+        "department": "CS",
+        "enrolledStudent": [
+            "yuhanwang001@gmail.com"
+        ],
+        "notificationTopic": "cs700topic",
+        "professorId": "zhifeng.sun"
+    }
+]
+The student will get Subscription Confirmation email.
+
+For lambda part, please go to https://github.com/TAVAU/CloudComputing
